@@ -1,0 +1,20 @@
+<!--Pelajari JSON ,FETCH, MAP, PEMANGGILAN OBJECT-->
+<h4>List Name</h4>
+<div>
+    <ol id="name">
+
+    </ol>
+</div>
+<script>
+    const url = 'https://jsonplaceholder.typicode.com/users'; 
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        let x = data.map(value => value.name);
+        document.getElementById("name").innerHTML = x;
+        return console.log(x);
+    })
+    .catch((error)=>{
+    console.log(error);
+})
+</script>
